@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Cliente {
+public class Associado {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -15,6 +15,8 @@ public class Cliente {
 	private String nome;
 	@ManyToOne
 	private Endereco endereco;
+	@ManyToOne
+	private Cargo cargo;
 
 	public Long getId() {
 		return id;
@@ -40,4 +42,11 @@ public class Cliente {
 		this.endereco = endereco;
 	}
 
+	public Cargo getCargo() {
+		return cargo;
+	}
+
+	public void setCargo(Cargo cargo) {
+		this.cargo = cargo;
+	}
 }
